@@ -8,24 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DetailViewController : UITableViewController
+@interface SearchDetail : UITableViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *pronunciationLabel;
-
 @property (weak, nonatomic) IBOutlet UILabel *interpretationsLabel;
-
 @property (weak, nonatomic) IBOutlet UILabel *frequencyRankLabel;
-
 @property (weak, nonatomic) IBOutlet UILabel *difficultyLevelLabel;
-
 @property (weak, nonatomic) IBOutlet UILabel *studyUserCountLabel;
-
 @property (weak, nonatomic) IBOutlet UILabel *acknowledgeRateLabel;
 
-
-@property (strong, nonatomic) NSDictionary *dataDict;
+@property (copy, nonatomic) NSDictionary *dataDict;
 
 @end
 

@@ -1,24 +1,25 @@
 //
-//  MyCell.m
+//  SearchCell.m
 //  FirstProject
 //
-//  Created by 谢政 on 2020/5/14.
+//  Created by 谢政 on 2020/5/16.
 //  Copyright © 2020 maimemo. All rights reserved.
 //
 
-#import "MyCell.h"
+#import "SearchCell.h"
 
-@implementation MyCell
+
+@implementation SearchCell
+
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
 }
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
+
 
 @end

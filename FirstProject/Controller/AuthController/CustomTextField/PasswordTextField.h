@@ -1,16 +1,17 @@
 //
-//  MyCell.h
+//  PasswordTextField.h
 //  FirstProject
 //
-//  Created by 谢政 on 2020/5/14.
+//  Created by 谢政 on 2020/5/19.
 //  Copyright © 2020 maimemo. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "InputTextField.h"
+
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MyCell : UITableViewCell
+@interface PasswordTextField : InputTextField
 
 @end
 

@@ -1,8 +1,8 @@
 //
-//  WordTypeCell.h
+//  UserBindCell.h
 //  FirstProject
 //
-//  Created by 谢政 on 2020/5/15.
+//  Created by 谢政 on 2020/5/23.
 //  Copyright © 2020 maimemo. All rights reserved.
 //
 
@@ -10,9 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WordTypeCell : UITableViewCell
-
-@property (strong, nonatomic) NSString *data;
+@interface UserBindCell : UITableViewCell
 
 @end
 

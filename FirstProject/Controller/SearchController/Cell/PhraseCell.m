@@ -8,22 +8,27 @@
 
 #import "PhraseCell.h"
 
+
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
+
 
 @interface PhraseCell ()
 
 @end
 
+
 @implementation PhraseCell
+
 
 - (void)awakeFromNib {
     [super awakeFromNib];
 }
 
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
 }
+
 
 - (void)setFrame:(CGRect)frame {
     frame.origin.y += 5;
@@ -31,10 +36,12 @@
     [super setFrame:frame];
 }
 
+
 # pragma mark --定义例句cell
+
+
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-
     if (self) {
         CGFloat cellHeight = self.frame.size.height;
         CGFloat cellY = self.frame.origin.y;
@@ -54,10 +61,10 @@
         self.interpretLabel = [[UILabel alloc] initWithFrame: CGRectMake(interpretLabelX, interpretLabelY,
                                                                          interpretLabelWidth, interpretLabelHeight)];
         [self addSubview: self.interpretLabel];
-        
         self.accessoryType = UITableViewCellAccessoryNone;
     }
-    
     return self;
 }
+
+
 @end

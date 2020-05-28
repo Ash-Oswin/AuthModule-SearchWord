@@ -8,65 +8,58 @@
 
 #import "ViewModel.h"
 
+
 @interface ViewModel ()
 
-@property (strong, nonatomic) NSArray *dataList;
-
-@property (strong, nonatomic) NSArray *rawData;
-@property (strong, nonatomic) NSArray *dataForQuery;
+@property (copy, nonatomic) NSArray <NSDictionary *> *rawData;
+@property (copy, nonatomic) NSArray *dataForQuery;
 
 @end
 
 
 @implementation ViewModel
+
+
 - (instancetype)init {
     self = [super init];
-    
     if (self) {
         NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"simple-voc-data" ofType:@"json"];
-        
         NSData *data = [[NSData alloc] initWithContentsOfFile:jsonPath];
-        
-        self.rawData = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+        NSArray *toBeVerified = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+        self.rawData = [toBeVerified isKindOfClass:[NSArray class]] ? toBeVerified : [[NSArray alloc] init];
     }
-    
     return self;
 }
 
-- (NSArray *)getQueryData{
+
+- (NSArray *)getQueryData {
     NSMutableArray *unSortArray = [[NSMutableArray alloc] init];
-
-    for (NSMutableDictionary *tempDict in self.rawData) {
-        if (tempDict[@"spelling"] == nil ||
-                     tempDict[@"interpretations"][0][@"interpretation"] == nil) {
-            continue;
-        }
-
-        NSDictionary *dict = @{@"spelling" : tempDict[@"spelling"],
-                               @"interpretation" : tempDict[@"interpretations"][0][@"interpretation"]};
-
-        [unSortArray addObject: dict];
+    if (self.rawData.count == 0) {
+        return nil;
     }
-
+    for (NSDictionary *tempDict in self.rawData) {
+        NSDictionary *dict = [self getSafetySingleQueryDataWithDict:tempDict];
+        [unSortArray addObject:dict];
+    }
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"spelling" ascending:TRUE];
     NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
     [unSortArray sortUsingDescriptors:sortDescriptors];
     self.dataForQuery = unSortArray;
-    
     return self.dataForQuery;
 }
 
-- (NSDictionary *)getDetailDataWith : (NSString *)selectWord {
+
+- (NSDictionary *)getDetailDataWith:(NSString *)selectWord {
     NSPredicate *scopePredocate = [NSPredicate predicateWithFormat:@"SELF.spelling BEGINSWITH[c] %@", selectWord];
-    NSArray *tempArray = [self.rawData filteredArrayUsingPredicate: scopePredocate];
-    
-    return tempArray[0];
+    NSArray *toBeVerifiedArray = [self.rawData filteredArrayUsingPredicate:scopePredocate];
+    NSDictionary *tempDict = ([toBeVerifiedArray isKindOfClass:[NSArray class]] && toBeVerifiedArray.count > 0) ? toBeVerifiedArray[0] : nil;
+    return tempDict;
 }
 
 
-- (NSString *) clacWordFrequencyRankWith: (NSString *)word{
+- (NSString *)clacWordFrequencyRankWith:(NSString *)word {
     NSPredicate *getSelectWord = [NSPredicate predicateWithFormat:@"SELF.spelling LIKE[c] %@", word];
-    float wordFrequency = [[self.rawData filteredArrayUsingPredicate: getSelectWord][0][@"frequency"] floatValue];
+    float wordFrequency = [[self.rawData filteredArrayUsingPredicate:getSelectWord][0][@"frequency"] floatValue];
      
     NSPredicate *frequencyGTRWord = [NSPredicate predicateWithFormat:@"SELF.frequency > %f", wordFrequency];
     NSArray *frequencyGTRWordArray = [self.rawData filteredArrayUsingPredicate:frequencyGTRWord];
@@ -77,16 +70,45 @@
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"spelling" ascending:TRUE];
     NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
     [frequencyEQUWordArray sortUsingDescriptors:sortDescriptors];
-    
-    NSInteger countBeforeWord = [frequencyEQUWordArray indexOfObject: getSelectWord];
+    NSInteger countBeforeWord = [frequencyEQUWordArray indexOfObject:getSelectWord];
     if (countBeforeWord == -1) {
         countBeforeWord = 0;
     }
     
     NSInteger clacFrequencyRank = [frequencyGTRWordArray count] + countBeforeWord + 1;
     NSInteger dataCount = self.rawData.count;
-    NSString *frequencyRank = [[NSString alloc] initWithFormat: @"%d/%d", clacFrequencyRank, dataCount];
-    
+    NSString *frequencyRank = [[NSString alloc] initWithFormat:@"%d/%d", clacFrequencyRank, dataCount];
     return frequencyRank;
 }
+
+
+- (NSDictionary *)getSafetySingleQueryDataWithDict:(NSDictionary *)dict {
+    @try {
+        NSAssert([self isNotEmptyAndisNSStringTypewithString: dict[@"spelling"]], @"invalid spelling");
+        NSAssert([self isNotEmptyAndisNSStringTypewithString: dict[@"interpretations"][0][@"interpretation"]], @"invalid interpretation");
+    } @catch (NSException *exception) {
+        return nil;
+    }
+    
+    NSDictionary *tempDict = @{@"spelling": dict[@"spelling"], @"interpretation": dict[@"interpretations"][0][@"interpretation"]};
+    return tempDict;
+}
+
+
+- (BOOL)isNotEmptyAndisNSStringTypewithString:(NSString *)str {
+    if (!str) {
+        return FALSE;
+    }
+    if (![str isKindOfClass:[NSString class]]) {
+        return FALSE;
+    }
+    NSCharacterSet *set = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+    NSString *trimmedStr = [str stringByTrimmingCharactersInSet:set];
+    if (!trimmedStr.length) {
+        return FALSE;
+    }
+    return TRUE;
+}
+
+
 @end

@@ -5,35 +5,38 @@
 //  Created by 谢政 on 2020/5/14.
 //  Copyright © 2020 maimemo. All rights reserved.
 //
-#import "DetailViewController.h"
-#import "MyCell.h"
+
+#import "SearchDetail.h"
 #import "PhraseCell.h"
 #import "WordTypeCell.h"
 #import "NotesCell.h"
 
+
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
-
 // 获取rgb
-#define ssRGB(r, g, b)             [UIColor colorWithRed:((r) / 255.0) green:((g) / 255.0) blue:((b) / 255.0) alpha:1.0]
+#define ssRGB(r, g, b) [UIColor colorWithRed:((r) / 255.0) green:((g) / 255.0) blue:((b) / 255.0) alpha:1.0]
 
-//static CGFloat typeWordCellHeight = 44.0;
+
 static CGFloat phraseCellHeight = 80;
 static CGFloat sectionHeight = 35;
 
-@interface DetailViewController ()
+
+@interface SearchDetail ()
 
 @property (strong, nonatomic) UILabel *titleLabel;
 
-typedef enum : NSUInteger {
+typedef NS_ENUM(NSInteger, SectionType) {
     SectionTypeWordType = 0,
     SectionTypePhrase = 1,
     SectionTypeNotes = 2,
-} SectionType;
+};
 
 @end
 
-@implementation DetailViewController
+
+@implementation SearchDetail
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -41,20 +44,18 @@ typedef enum : NSUInteger {
     CGFloat titleLabelWidth = SCREEN_WIDTH / 2;
     CGFloat titleLabelHeight = self.navigationController.navigationBar.frame.size.height;
     CGFloat titleLabelX = SCREEN_WIDTH * 0.15;
-    
     self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(titleLabelX, 0,
                                                                     titleLabelWidth, titleLabelHeight)];
     self.titleLabel.font = [UIFont systemFontOfSize: 19];
     self.titleLabel.textColor = ssRGB(52, 186, 157);
     self.titleLabel.text = self.dataDict[@"spelling"];
     [self.navigationController.navigationBar addSubview: self.titleLabel];
-    
-    self.navigationItem.backBarButtonItem.style =  UIBarButtonSystemItemReply;
+    self.navigationItem.backBarButtonItem.style = UIBarButtonSystemItemReply;
     self.navigationController.navigationBar.tintColor = ssRGB(52, 186, 157);
     
-    // 点击转换按钮切换英美发音（未完成）
+    /* 点击转换按钮切换英美发音（未完成）*/
     self.pronunciationLabel.text = self.dataDict[@"phonetic_uk"];
-    // 根据释义个数生成动态单元格（未完成）
+    /* 根据释义个数生成动态单元格（未完成）*/
     self.interpretationsLabel.text = self.dataDict[@"interpretations"][0][@"interpretation"];
     
     self.frequencyRankLabel.text = self.dataDict[@"frequencyRank"];
@@ -68,7 +69,7 @@ typedef enum : NSUInteger {
     double acknowledgeRate = [self.dataDict[@"acknowledge_rate"] doubleValue] * 100;
     self.acknowledgeRateLabel.text = [[NSString alloc] initWithFormat:@"%.2f%%", acknowledgeRate];
     
-    // 删除多余的空行
+    /* 删除多余的空行 */
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame: CGRectZero];
 }
@@ -76,51 +77,44 @@ typedef enum : NSUInteger {
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-
     [self.navigationController.navigationBar.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
 }
 
+
 #pragma mark --UITableViewDataSource实现
+
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    //
     switch (section) {
         case SectionTypePhrase: {
             return [self.dataDict[@"phrases"] count];
         }
     }
-    
     return [super tableView:tableView numberOfRowsInSection:section];
 }
 
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     switch (indexPath.section) {
         case SectionTypePhrase: {
-            // 注册cell类 不然程序会崩溃
-            [self.tableView registerClass:[PhraseCell class] forCellReuseIdentifier:@"CellIdentifier"];
-            
-            PhraseCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellIdentifier" forIndexPath:indexPath];
+            PhraseCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellIdentifier"];
             if (cell == nil) {
-                cell = [[PhraseCell alloc] init];
+                cell = [[PhraseCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"CellIdentifier"];
             }
-            
             NSInteger row = indexPath.row;
-            
             cell.phraseLabel.text = self.dataDict[@"phrases"][row][@"phrase"];
             cell.interpretLabel.text = self.dataDict[@"phrases"][row][@"interpretation"];
-            
             return cell;
         }
             
         case SectionTypeNotes: {
-            [self.tableView registerClass:[NotesCell class] forCellReuseIdentifier:@"Cell"];
-
-            NotesCell *notesCell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-
+            NotesCell *notesCell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+            if (notesCell == nil) {
+                notesCell = [[NotesCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+            }
             notesCell.label.text = self.dataDict[@"notes"][0][@"type"];
             notesCell.textView.text = self.dataDict[@"notes"][0][@"note"];
             [notesCell autoConfigTextViewHeight];
-            
             return notesCell;
         }
             
@@ -129,19 +123,21 @@ typedef enum : NSUInteger {
     }
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.section) {
         case SectionTypePhrase:
             return phraseCellHeight;
         case SectionTypeNotes: {
             CGRect re = [self.tableView rectForSection: indexPath.section];
             CGRect sect = [self.tableView convertRect:re toView:[self.tableView superview]];
-            return SCREEN_HEIGHT - sect.origin.y;
+            return SCREEN_HEIGHT - CGRectGetMinY(sect);
         }
     }
     
     return [super tableView:tableView heightForRowAtIndexPath:indexPath];
 }
+
 
 // 设置静态单元格中动态单元格每格的indentationLevel，不设置会报错
 - (NSInteger)tableView:(UITableView *)tableView indentationLevelForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -154,15 +150,15 @@ typedef enum : NSUInteger {
 
 }
 
+
 #pragma mark --设置section样式
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
+
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     NSString *sectionTitle = [self tableView:tableView titleForHeaderInSection:section];
-    
     if (sectionTitle == nil) {
          return nil;
-     }
-    
+    }
     UIView* sectionView = [[UIView alloc] init];
     sectionView.backgroundColor = ssRGB(248, 248, 248);
     
@@ -175,9 +171,9 @@ typedef enum : NSUInteger {
     label.backgroundColor = [UIColor clearColor];
     label.text = sectionTitle;
     [sectionView addSubview:label];
-    
     return sectionView;
 }
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     // 不显示第一个section头
@@ -186,5 +182,6 @@ typedef enum : NSUInteger {
     }
     return sectionHeight;
 }
+
 
 @end

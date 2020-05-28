@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8140BD4B247525D7005E552B /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 8140BD4A247525D7005E552B /* UIColor+Hex.m */; };
+		814EF7512473E16E006B3276 /* InputTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 814EF7502473E16E006B3276 /* InputTextField.m */; };
+		814EF75524740D0E006B3276 /* AuthExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 814EF75424740D0E006B3276 /* AuthExample.m */; };
+		814EF75824740EE1006B3276 /* PasswordTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 814EF75724740EE1006B3276 /* PasswordTextField.m */; };
+		814EF75B24742DB2006B3276 /* ElseLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 814EF75A24742DB2006B3276 /* ElseLoginView.m */; };
+		814EF75E247431D1006B3276 /* RegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 814EF75D247431D1006B3276 /* RegisterView.m */; };
+		814EF76424751472006B3276 /* LoginHomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 814EF76324751472006B3276 /* LoginHomeView.m */; };
+		81545657247F9020007CBBE2 /* ClickAnimationButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 81545656247F9020007CBBE2 /* ClickAnimationButton.m */; };
+		8154565B247FADF6007CBBE2 /* CaptchaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8154565A247FADF6007CBBE2 /* CaptchaView.m */; };
+		8163354E2477FFA900A712D0 /* UserBindView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8163354D2477FFA900A712D0 /* UserBindView.m */; };
+		816335522478BFA500A712D0 /* UserBindCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 816335512478BFA500A712D0 /* UserBindCell.m */; };
 		8169D659246E46BA0034337A /* PhraseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8169D658246E46BA0034337A /* PhraseCell.m */; };
 		8169D65F246E70160034337A /* WordTypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8169D65E246E70160034337A /* WordTypeCell.m */; };
 		8169D662246E854E0034337A /* NotesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8169D661246E854E0034337A /* NotesCell.m */; };
@@ -15,15 +26,42 @@
 		8169D690246FB8B50034337A /* SearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8169D68F246FB8B50034337A /* SearchCell.m */; };
 		816ED177246D3C680066C07C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 816ED176246D3C680066C07C /* AppDelegate.m */; };
 		816ED17A246D3C680066C07C /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 816ED179246D3C680066C07C /* SceneDelegate.m */; };
-		816ED17D246D3C680066C07C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 816ED17C246D3C680066C07C /* ViewController.m */; };
+		816ED17D246D3C680066C07C /* SearchHome.m in Sources */ = {isa = PBXBuildFile; fileRef = 816ED17C246D3C680066C07C /* SearchHome.m */; };
 		816ED180246D3C680066C07C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 816ED17E246D3C680066C07C /* Main.storyboard */; };
 		816ED182246D3C6B0066C07C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 816ED181246D3C6B0066C07C /* Assets.xcassets */; };
 		816ED185246D3C6B0066C07C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 816ED183246D3C6B0066C07C /* LaunchScreen.storyboard */; };
 		816ED188246D3C6B0066C07C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 816ED187246D3C6B0066C07C /* main.m */; };
-		816ED196246D46A00066C07C /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 816ED195246D46A00066C07C /* DetailViewController.m */; };
+		816ED196246D46A00066C07C /* SearchDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 816ED195246D46A00066C07C /* SearchDetail.m */; };
+		8179907C2478D07F0031120E /* RegisterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179907B2478D07F0031120E /* RegisterCell.m */; };
+		8179907F247908380031120E /* BindAccoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179907E247908380031120E /* BindAccoutView.m */; };
+		8186FBED247D49B50086AC19 /* SkipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8186FBEC247D49B50086AC19 /* SkipView.m */; };
+		8186FBF0247D55AE0086AC19 /* ForgetPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8186FBEF247D55AE0086AC19 /* ForgetPasswordView.m */; };
+		8193AE3D247E38F600B927B3 /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8193AE3C247E38F600B927B3 /* AlertView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8140BD49247525D7005E552B /* UIColor+Hex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		8140BD4A247525D7005E552B /* UIColor+Hex.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		814EF74F2473E16E006B3276 /* InputTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputTextField.h; sourceTree = "<group>"; };
+		814EF7502473E16E006B3276 /* InputTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputTextField.m; sourceTree = "<group>"; };
+		814EF75324740D0E006B3276 /* AuthExample.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthExample.h; sourceTree = "<group>"; };
+		814EF75424740D0E006B3276 /* AuthExample.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthExample.m; sourceTree = "<group>"; };
+		814EF75624740EE1006B3276 /* PasswordTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordTextField.h; sourceTree = "<group>"; };
+		814EF75724740EE1006B3276 /* PasswordTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordTextField.m; sourceTree = "<group>"; };
+		814EF75924742DB1006B3276 /* ElseLoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ElseLoginView.h; sourceTree = "<group>"; };
+		814EF75A24742DB2006B3276 /* ElseLoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ElseLoginView.m; sourceTree = "<group>"; };
+		814EF75C247431D1006B3276 /* RegisterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterView.h; sourceTree = "<group>"; };
+		814EF75D247431D1006B3276 /* RegisterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterView.m; sourceTree = "<group>"; };
+		814EF76224751472006B3276 /* LoginHomeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginHomeView.h; sourceTree = "<group>"; };
+		814EF76324751472006B3276 /* LoginHomeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginHomeView.m; sourceTree = "<group>"; };
+		81545655247F9020007CBBE2 /* ClickAnimationButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClickAnimationButton.h; sourceTree = "<group>"; };
+		81545656247F9020007CBBE2 /* ClickAnimationButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClickAnimationButton.m; sourceTree = "<group>"; };
+		81545659247FADF6007CBBE2 /* CaptchaView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CaptchaView.h; sourceTree = "<group>"; };
+		8154565A247FADF6007CBBE2 /* CaptchaView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CaptchaView.m; sourceTree = "<group>"; };
+		8163354C2477FFA900A712D0 /* UserBindView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserBindView.h; sourceTree = "<group>"; };
+		8163354D2477FFA900A712D0 /* UserBindView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserBindView.m; sourceTree = "<group>"; };
+		816335502478BFA500A712D0 /* UserBindCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserBindCell.h; sourceTree = "<group>"; };
+		816335512478BFA500A712D0 /* UserBindCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserBindCell.m; sourceTree = "<group>"; };
 		8169D657246E46BA0034337A /* PhraseCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhraseCell.h; sourceTree = "<group>"; };
 		8169D658246E46BA0034337A /* PhraseCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhraseCell.m; sourceTree = "<group>"; };
 		8169D65D246E70160034337A /* WordTypeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WordTypeCell.h; sourceTree = "<group>"; };
@@ -40,15 +78,25 @@
 		816ED176246D3C680066C07C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		816ED178246D3C680066C07C /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		816ED179246D3C680066C07C /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		816ED17B246D3C680066C07C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		816ED17C246D3C680066C07C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		816ED17B246D3C680066C07C /* SearchHome.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchHome.h; sourceTree = "<group>"; };
+		816ED17C246D3C680066C07C /* SearchHome.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchHome.m; sourceTree = "<group>"; };
 		816ED17F246D3C680066C07C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		816ED181246D3C6B0066C07C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		816ED184246D3C6B0066C07C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		816ED186246D3C6B0066C07C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		816ED187246D3C6B0066C07C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		816ED194246D46A00066C07C /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		816ED195246D46A00066C07C /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		816ED194246D46A00066C07C /* SearchDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchDetail.h; sourceTree = "<group>"; };
+		816ED195246D46A00066C07C /* SearchDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchDetail.m; sourceTree = "<group>"; };
+		8179907A2478D07F0031120E /* RegisterCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterCell.h; sourceTree = "<group>"; };
+		8179907B2478D07F0031120E /* RegisterCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterCell.m; sourceTree = "<group>"; };
+		8179907D247908380031120E /* BindAccoutView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BindAccoutView.h; sourceTree = "<group>"; };
+		8179907E247908380031120E /* BindAccoutView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BindAccoutView.m; sourceTree = "<group>"; };
+		8186FBEB247D49B50086AC19 /* SkipView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkipView.h; sourceTree = "<group>"; };
+		8186FBEC247D49B50086AC19 /* SkipView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkipView.m; sourceTree = "<group>"; };
+		8186FBEE247D55AE0086AC19 /* ForgetPasswordView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordView.h; sourceTree = "<group>"; };
+		8186FBEF247D55AE0086AC19 /* ForgetPasswordView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordView.m; sourceTree = "<group>"; };
+		8193AE3B247E38F600B927B3 /* AlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertView.h; sourceTree = "<group>"; };
+		8193AE3C247E38F600B927B3 /* AlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +110,92 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8140BD48247525AB005E552B /* tool */ = {
+			isa = PBXGroup;
+			children = (
+				8140BD49247525D7005E552B /* UIColor+Hex.h */,
+				8140BD4A247525D7005E552B /* UIColor+Hex.m */,
+			);
+			path = tool;
+			sourceTree = "<group>";
+		};
+		814EF73C2473CF24006B3276 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				814EF761247513CB006B3276 /* SearchController */,
+				814EF75F2475131F006B3276 /* AuthController */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		814EF7482473DE48006B3276 /* CustomTextField */ = {
+			isa = PBXGroup;
+			children = (
+				814EF74F2473E16E006B3276 /* InputTextField.h */,
+				814EF7502473E16E006B3276 /* InputTextField.m */,
+				814EF75624740EE1006B3276 /* PasswordTextField.h */,
+				814EF75724740EE1006B3276 /* PasswordTextField.m */,
+			);
+			path = CustomTextField;
+			sourceTree = "<group>";
+		};
+		814EF75F2475131F006B3276 /* AuthController */ = {
+			isa = PBXGroup;
+			children = (
+				81545658247F9039007CBBE2 /* CustomButton */,
+				8186FBE7247D49310086AC19 /* PopView */,
+				8163354F2478BF7A00A712D0 /* Cell */,
+				814EF7482473DE48006B3276 /* CustomTextField */,
+				814EF76224751472006B3276 /* LoginHomeView.h */,
+				814EF76324751472006B3276 /* LoginHomeView.m */,
+				8163354C2477FFA900A712D0 /* UserBindView.h */,
+				8163354D2477FFA900A712D0 /* UserBindView.m */,
+				814EF75324740D0E006B3276 /* AuthExample.h */,
+				814EF75424740D0E006B3276 /* AuthExample.m */,
+				814EF75C247431D1006B3276 /* RegisterView.h */,
+				814EF75D247431D1006B3276 /* RegisterView.m */,
+				8179907D247908380031120E /* BindAccoutView.h */,
+				8179907E247908380031120E /* BindAccoutView.m */,
+				814EF75924742DB1006B3276 /* ElseLoginView.h */,
+				814EF75A24742DB2006B3276 /* ElseLoginView.m */,
+				8186FBEE247D55AE0086AC19 /* ForgetPasswordView.h */,
+				8186FBEF247D55AE0086AC19 /* ForgetPasswordView.m */,
+			);
+			path = AuthController;
+			sourceTree = "<group>";
+		};
+		814EF761247513CB006B3276 /* SearchController */ = {
+			isa = PBXGroup;
+			children = (
+				8188F415246D9971006281AD /* Cell */,
+				816ED17B246D3C680066C07C /* SearchHome.h */,
+				816ED17C246D3C680066C07C /* SearchHome.m */,
+				816ED194246D46A00066C07C /* SearchDetail.h */,
+				816ED195246D46A00066C07C /* SearchDetail.m */,
+			);
+			path = SearchController;
+			sourceTree = "<group>";
+		};
+		81545658247F9039007CBBE2 /* CustomButton */ = {
+			isa = PBXGroup;
+			children = (
+				81545655247F9020007CBBE2 /* ClickAnimationButton.h */,
+				81545656247F9020007CBBE2 /* ClickAnimationButton.m */,
+			);
+			path = CustomButton;
+			sourceTree = "<group>";
+		};
+		8163354F2478BF7A00A712D0 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				816335502478BFA500A712D0 /* UserBindCell.h */,
+				816335512478BFA500A712D0 /* UserBindCell.m */,
+				8179907A2478D07F0031120E /* RegisterCell.h */,
+				8179907B2478D07F0031120E /* RegisterCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		816ED169246D3C680066C07C = {
 			isa = PBXGroup;
 			children = (
@@ -81,23 +215,33 @@
 		816ED174246D3C680066C07C /* FirstProject */ = {
 			isa = PBXGroup;
 			children = (
+				8140BD48247525AB005E552B /* tool */,
+				814EF73C2473CF24006B3276 /* Controller */,
 				8188F414246D84A0006281AD /* ViewModel */,
-				8188F415246D9971006281AD /* Cell */,
 				816ED175246D3C680066C07C /* AppDelegate.h */,
+				816ED17E246D3C680066C07C /* Main.storyboard */,
 				816ED176246D3C680066C07C /* AppDelegate.m */,
 				816ED178246D3C680066C07C /* SceneDelegate.h */,
 				816ED179246D3C680066C07C /* SceneDelegate.m */,
-				816ED17B246D3C680066C07C /* ViewController.h */,
-				816ED17C246D3C680066C07C /* ViewController.m */,
-				816ED17E246D3C680066C07C /* Main.storyboard */,
-				816ED194246D46A00066C07C /* DetailViewController.h */,
-				816ED195246D46A00066C07C /* DetailViewController.m */,
 				816ED181246D3C6B0066C07C /* Assets.xcassets */,
 				816ED183246D3C6B0066C07C /* LaunchScreen.storyboard */,
 				816ED186246D3C6B0066C07C /* Info.plist */,
 				816ED187246D3C6B0066C07C /* main.m */,
 			);
 			path = FirstProject;
+			sourceTree = "<group>";
+		};
+		8186FBE7247D49310086AC19 /* PopView */ = {
+			isa = PBXGroup;
+			children = (
+				8193AE3B247E38F600B927B3 /* AlertView.h */,
+				8193AE3C247E38F600B927B3 /* AlertView.m */,
+				8186FBEB247D49B50086AC19 /* SkipView.h */,
+				8186FBEC247D49B50086AC19 /* SkipView.m */,
+				81545659247FADF6007CBBE2 /* CaptchaView.h */,
+				8154565A247FADF6007CBBE2 /* CaptchaView.m */,
+			);
+			path = PopView;
 			sourceTree = "<group>";
 		};
 		8188F414246D84A0006281AD /* ViewModel */ = {
@@ -196,16 +340,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				816ED17D246D3C680066C07C /* ViewController.m in Sources */,
+				816ED17D246D3C680066C07C /* SearchHome.m in Sources */,
+				8140BD4B247525D7005E552B /* UIColor+Hex.m in Sources */,
 				816ED177246D3C680066C07C /* AppDelegate.m in Sources */,
+				8186FBED247D49B50086AC19 /* SkipView.m in Sources */,
 				8169D662246E854E0034337A /* NotesCell.m in Sources */,
+				8163354E2477FFA900A712D0 /* UserBindView.m in Sources */,
 				8169D659246E46BA0034337A /* PhraseCell.m in Sources */,
+				814EF75B24742DB2006B3276 /* ElseLoginView.m in Sources */,
+				814EF76424751472006B3276 /* LoginHomeView.m in Sources */,
+				8193AE3D247E38F600B927B3 /* AlertView.m in Sources */,
+				81545657247F9020007CBBE2 /* ClickAnimationButton.m in Sources */,
 				816ED188246D3C6B0066C07C /* main.m in Sources */,
 				816ED17A246D3C680066C07C /* SceneDelegate.m in Sources */,
 				8169D68B246F92430034337A /* ViewModel.m in Sources */,
+				8186FBF0247D55AE0086AC19 /* ForgetPasswordView.m in Sources */,
 				8169D690246FB8B50034337A /* SearchCell.m in Sources */,
-				816ED196246D46A00066C07C /* DetailViewController.m in Sources */,
+				814EF75524740D0E006B3276 /* AuthExample.m in Sources */,
+				8154565B247FADF6007CBBE2 /* CaptchaView.m in Sources */,
+				814EF75E247431D1006B3276 /* RegisterView.m in Sources */,
+				816ED196246D46A00066C07C /* SearchDetail.m in Sources */,
+				8179907F247908380031120E /* BindAccoutView.m in Sources */,
+				814EF75824740EE1006B3276 /* PasswordTextField.m in Sources */,
 				8169D65F246E70160034337A /* WordTypeCell.m in Sources */,
+				8179907C2478D07F0031120E /* RegisterCell.m in Sources */,
+				816335522478BFA500A712D0 /* UserBindCell.m in Sources */,
+				814EF7512473E16E006B3276 /* InputTextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

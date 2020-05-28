@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NotesCell : UITableViewCell
@@ -16,7 +17,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) UITextView *textView;
 
 - (void)autoConfigTextViewHeight;
-//- (CGFloat)getCellHeight;
 
 @end
 
