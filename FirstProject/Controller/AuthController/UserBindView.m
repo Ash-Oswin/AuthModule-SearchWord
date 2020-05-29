@@ -33,6 +33,7 @@ static NSInteger registerRow = 0;
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.title = @"用户绑定";
     
+    /* window */
     CGRect const screen = [[UIScreen mainScreen] bounds];
     CGFloat const ScreenWidth = CGRectGetWidth(screen);
     CGFloat const GeneralWidth = ScreenWidth > 320 ? 295 : (ScreenWidth - 30) / 2;
