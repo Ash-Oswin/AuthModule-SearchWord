@@ -24,7 +24,6 @@ static CGFloat const AlertWidth = 256;
 
 @implementation AlertView
 
-
 - (instancetype)init {
     self = [super init];
     if (self) {

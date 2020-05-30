@@ -8,14 +8,16 @@
 
 #import "SearchHome.h"
 #import "SearchDetail.h"
-#import "ViewModel.h"
 #import "SearchCell.h"
+#import "ViewModel.h"
 
 
 @interface SearchHome () <UISearchBarDelegate, UISearchResultsUpdating>
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+
 @property (strong, nonatomic) ViewModel *viewModel;
+
 @property (copy, nonatomic) NSArray<NSDictionary *> *dataList;
 @property (copy, nonatomic) NSMutableArray<NSDictionary *> *filterDataList;
 
@@ -29,7 +31,7 @@
     [super viewDidLoad];
     self.title = @"";
     self.searchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
-    self.viewModel = [[ViewModel alloc] init];
+    self.viewModel = [[ViewModel alloc] initWithLocalData];
     self.dataList = [self.viewModel getQueryData];
     if (self.dataList == nil) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"错误" message:@"很抱歉，程序出现未知错误，请重启程序后再试" preferredStyle:UIAlertControllerStyleAlert];
@@ -78,7 +80,7 @@
 
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
-    [self filterContentForSearchText: searchText];
+    [self filterContentForSearchText:searchText];
     [self.tableView reloadData];
 }
 
@@ -99,10 +101,11 @@
     if ([searchText length] == 0) {
         self.filterDataList = nil;
     }
-    // 以输入的字符为首，后面匹配任意个字符串
-    NSPredicate *scopePredocate = [NSPredicate predicateWithFormat:@"SELF.spelling BEGINSWITH[c] %@", searchText];
-    NSArray *tempArray = [self.dataList filteredArrayUsingPredicate: scopePredocate];
-    self.filterDataList = [NSMutableArray arrayWithArray: tempArray];
+//    // 以输入的字符为首，后面匹配任意个字符串
+//    NSPredicate *scopePredocate = [NSPredicate predicateWithFormat:@"SELF.spelling BEGINSWITH[c] %@", searchText];
+//    NSArray *tempArray = [self.dataList filteredArrayUsingPredicate:scopePredocate];
+    ViewModel *viewModel = [[ViewModel alloc] initWithApiData];
+    self.filterDataList = [[viewModel getApiQueryDataWithString:searchText] mutableCopy];
 }
 
 

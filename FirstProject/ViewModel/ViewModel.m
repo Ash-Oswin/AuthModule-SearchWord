@@ -7,6 +7,7 @@
 //
 
 #import "ViewModel.h"
+#import "NetworkManager.h"
 
 
 @interface ViewModel ()
@@ -14,22 +15,51 @@
 @property (copy, nonatomic) NSArray <NSDictionary *> *rawData;
 @property (copy, nonatomic) NSArray *dataForQuery;
 
+@property (copy, nonatomic) NetworkManager *manager;
+
 @end
 
 
 @implementation ViewModel
 
 
-- (instancetype)init {
+#pragma mark --调用接口查询数据
+
+
+- (instancetype)initWithApiData {
+    self = [super init];
+    if (self) {
+        _manager = [[NetworkManager alloc] init];
+    }
+    return self;
+}
+
+
+- (NSArray *)getApiQueryDataWithString:(NSString *)word {
+    NSArray *queryData = [self.manager searchWithWord:word];
+    if (queryData == nil) {
+        return nil;
+    };
+    return queryData;
+}
+
+
+#pragma mark --查找本地数据
+
+
+- (instancetype)initWithLocalData {
     self = [super init];
     if (self) {
         NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"simple-voc-data" ofType:@"json"];
         NSData *data = [[NSData alloc] initWithContentsOfFile:jsonPath];
         NSArray *toBeVerified = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-        self.rawData = [toBeVerified isKindOfClass:[NSArray class]] ? toBeVerified : [[NSArray alloc] init];
+        _rawData = [toBeVerified isKindOfClass:[NSArray class]] ? toBeVerified : [[NSArray alloc] init];
     }
     return self;
 }
+
+
+#pragma mark --过滤数据
 
 
 - (NSArray *)getQueryData {
@@ -95,6 +125,10 @@
 }
 
 
+#pragma mark --工具函数
+
+
+/* 判断传入的字符串是否为空 */
 - (BOOL)isNotEmptyAndisNSStringTypewithString:(NSString *)str {
     if (!str) {
         return FALSE;

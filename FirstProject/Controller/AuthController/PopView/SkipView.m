@@ -9,13 +9,14 @@
 #import "SkipView.h"
 #import "UIColor+Hex.h"
 #import "SearchHome.h"
+#import "ClickAnimationButton.h"
 
 
 @interface SkipView ()
 
 @property (strong, nonatomic) UILabel *descript;
-@property (strong, nonatomic) UIButton *skipButton;
-@property (strong, nonatomic) UIButton *cancelButton;
+@property (strong, nonatomic) ClickAnimationButton *skipButton;
+@property (strong, nonatomic) ClickAnimationButton *cancelButton;
 
 @end
 
@@ -51,7 +52,7 @@
         CGFloat buttonHeight = 36;
         CGFloat buttonTopMargin = 12 - descriptLineSpacing;
         CGFloat buttonY = CGRectGetMaxY(self.descript.frame) + buttonTopMargin;
-        _skipButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _skipButton = [[ClickAnimationButton alloc] init];
         _skipButton.frame = CGRectMake(CGRectGetMinX(self.descript.frame), buttonY,
                                        buttonWidth, buttonHeight);
         [_skipButton setTitle:@"确定跳过" forState:UIControlStateNormal];
@@ -65,7 +66,7 @@
         [self.alertView addSubview:_skipButton];
         
         CGFloat cancelButtonX = CGRectGetMaxX(self.descript.frame) - buttonWidth;
-        _cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _cancelButton = [[ClickAnimationButton alloc] init];
         _cancelButton.frame = CGRectMake(cancelButtonX, buttonY,
                                        buttonWidth, buttonHeight);
         [_cancelButton setTitle:@"取消" forState:UIControlStateNormal];

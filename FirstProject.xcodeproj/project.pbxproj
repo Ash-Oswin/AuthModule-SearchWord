@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		8140BD4B247525D7005E552B /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 8140BD4A247525D7005E552B /* UIColor+Hex.m */; };
+		8148839A24810ABA00490AE3 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8148839924810ABA00490AE3 /* NetworkManager.m */; };
+		8148839D2481323500490AE3 /* HMFJSONResponseSerializerWithData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8148839C2481323500490AE3 /* HMFJSONResponseSerializerWithData.m */; };
 		814EF7512473E16E006B3276 /* InputTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 814EF7502473E16E006B3276 /* InputTextField.m */; };
 		814EF75524740D0E006B3276 /* AuthExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 814EF75424740D0E006B3276 /* AuthExample.m */; };
 		814EF75824740EE1006B3276 /* PasswordTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 814EF75724740EE1006B3276 /* PasswordTextField.m */; };
@@ -37,11 +39,17 @@
 		8186FBED247D49B50086AC19 /* SkipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8186FBEC247D49B50086AC19 /* SkipView.m */; };
 		8186FBF0247D55AE0086AC19 /* ForgetPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8186FBEF247D55AE0086AC19 /* ForgetPasswordView.m */; };
 		8193AE3D247E38F600B927B3 /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8193AE3C247E38F600B927B3 /* AlertView.m */; };
+		EBEFB898135A606139BA7851 /* Pods_FirstProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BEC4D746EAD87689029A53 /* Pods_FirstProject.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01A83AD8DE003E18FF0D4115 /* Pods-FirstProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstProject.release.xcconfig"; path = "Target Support Files/Pods-FirstProject/Pods-FirstProject.release.xcconfig"; sourceTree = "<group>"; };
 		8140BD49247525D7005E552B /* UIColor+Hex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
 		8140BD4A247525D7005E552B /* UIColor+Hex.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		8148839824810ABA00490AE3 /* NetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
+		8148839924810ABA00490AE3 /* NetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
+		8148839B2481323500490AE3 /* HMFJSONResponseSerializerWithData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMFJSONResponseSerializerWithData.h; sourceTree = "<group>"; };
+		8148839C2481323500490AE3 /* HMFJSONResponseSerializerWithData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HMFJSONResponseSerializerWithData.m; sourceTree = "<group>"; };
 		814EF74F2473E16E006B3276 /* InputTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputTextField.h; sourceTree = "<group>"; };
 		814EF7502473E16E006B3276 /* InputTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputTextField.m; sourceTree = "<group>"; };
 		814EF75324740D0E006B3276 /* AuthExample.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthExample.h; sourceTree = "<group>"; };
@@ -97,6 +105,8 @@
 		8186FBEF247D55AE0086AC19 /* ForgetPasswordView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordView.m; sourceTree = "<group>"; };
 		8193AE3B247E38F600B927B3 /* AlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertView.h; sourceTree = "<group>"; };
 		8193AE3C247E38F600B927B3 /* AlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertView.m; sourceTree = "<group>"; };
+		81BEC4D746EAD87689029A53 /* Pods_FirstProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirstProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD5915CBE4D9219A4ACB18B7 /* Pods-FirstProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstProject.debug.xcconfig"; path = "Target Support Files/Pods-FirstProject/Pods-FirstProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,12 +114,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBEFB898135A606139BA7851 /* Pods_FirstProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		596FEA33C49A4508380AE32D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				81BEC4D746EAD87689029A53 /* Pods_FirstProject.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8140BD48247525AB005E552B /* tool */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +220,8 @@
 			children = (
 				816ED174246D3C680066C07C /* FirstProject */,
 				816ED173246D3C680066C07C /* Products */,
+				CFFA8FFE0DBE9E51D2075B6B /* Pods */,
+				596FEA33C49A4508380AE32D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -250,6 +271,10 @@
 				8169D68C246FA42E0034337A /* simple-voc-data.json */,
 				8169D689246F92420034337A /* ViewModel.h */,
 				8169D68A246F92420034337A /* ViewModel.m */,
+				8148839824810ABA00490AE3 /* NetworkManager.h */,
+				8148839924810ABA00490AE3 /* NetworkManager.m */,
+				8148839B2481323500490AE3 /* HMFJSONResponseSerializerWithData.h */,
+				8148839C2481323500490AE3 /* HMFJSONResponseSerializerWithData.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -269,6 +294,15 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		CFFA8FFE0DBE9E51D2075B6B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BD5915CBE4D9219A4ACB18B7 /* Pods-FirstProject.debug.xcconfig */,
+				01A83AD8DE003E18FF0D4115 /* Pods-FirstProject.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -276,9 +310,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 816ED18B246D3C6B0066C07C /* Build configuration list for PBXNativeTarget "FirstProject" */;
 			buildPhases = (
+				B7D0AC70E14F5262E84CB451 /* [CP] Check Pods Manifest.lock */,
 				816ED16E246D3C680066C07C /* Sources */,
 				816ED16F246D3C680066C07C /* Frameworks */,
 				816ED170246D3C680066C07C /* Resources */,
+				E2903F3022186534D26DC1BD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -335,6 +371,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B7D0AC70E14F5262E84CB451 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FirstProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2903F3022186534D26DC1BD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FirstProject/Pods-FirstProject-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FirstProject/Pods-FirstProject-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FirstProject/Pods-FirstProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		816ED16E246D3C680066C07C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -347,6 +425,7 @@
 				8169D662246E854E0034337A /* NotesCell.m in Sources */,
 				8163354E2477FFA900A712D0 /* UserBindView.m in Sources */,
 				8169D659246E46BA0034337A /* PhraseCell.m in Sources */,
+				8148839A24810ABA00490AE3 /* NetworkManager.m in Sources */,
 				814EF75B24742DB2006B3276 /* ElseLoginView.m in Sources */,
 				814EF76424751472006B3276 /* LoginHomeView.m in Sources */,
 				8193AE3D247E38F600B927B3 /* AlertView.m in Sources */,
@@ -357,6 +436,7 @@
 				8186FBF0247D55AE0086AC19 /* ForgetPasswordView.m in Sources */,
 				8169D690246FB8B50034337A /* SearchCell.m in Sources */,
 				814EF75524740D0E006B3276 /* AuthExample.m in Sources */,
+				8148839D2481323500490AE3 /* HMFJSONResponseSerializerWithData.m in Sources */,
 				8154565B247FADF6007CBBE2 /* CaptchaView.m in Sources */,
 				814EF75E247431D1006B3276 /* RegisterView.m in Sources */,
 				816ED196246D46A00066C07C /* SearchDetail.m in Sources */,
@@ -503,6 +583,7 @@
 		};
 		816ED18C246D3C6B0066C07C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD5915CBE4D9219A4ACB18B7 /* Pods-FirstProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -519,6 +600,7 @@
 		};
 		816ED18D246D3C6B0066C07C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01A83AD8DE003E18FF0D4115 /* Pods-FirstProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

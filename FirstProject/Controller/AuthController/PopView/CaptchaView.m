@@ -17,7 +17,7 @@
 @property (strong, nonatomic) UILabel *descript;
 @property (strong, nonatomic) InputTextField *captchaTextField;
 @property (strong, nonatomic) UIView *captchaImageView;
-@property (strong, nonatomic) UIButton *actionButton;
+@property (strong, nonatomic) ClickAnimationButton *actionButton;
 
 @end
 

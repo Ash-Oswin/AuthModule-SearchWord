@@ -10,5 +10,4 @@
 
 @interface SearchHome : UITableViewController
 
-
 @end

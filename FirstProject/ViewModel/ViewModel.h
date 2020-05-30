@@ -13,9 +13,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ViewModel : NSObject
 
+- (instancetype)initWithLocalData;
+- (instancetype)initWithApiData;
+
 - (NSArray *)getQueryData;
-- (NSDictionary *)getDetailDataWith: (NSString *)selectWord;
-- (NSString *)clacWordFrequencyRankWith: (NSString *)word;
+- (NSDictionary *)getDetailDataWith:(NSString *)selectWord;
+- (NSString *)clacWordFrequencyRankWith:(NSString *)word;
+
+- (NSArray *)getApiQueryDataWithString:(NSString *)word;
 
 @end
 
