@@ -53,7 +53,19 @@
     
 }
 
-- (NSArray *)searchWithWord:(NSString *)word {
+- (NSArray *)searchWithWord:(NSString *)word completion:(void (^)(NSArray *results, NSError *error))comlection {
+    
+    NSAssert(comlection, @"completion handler cannot be nil");
+    
+    if (!word || ![word isKindOfClass:NSString.class] || word.length == 0) {
+        if (comlection) {
+            NSError *error = [NSError errorWithDomain:@"com.demo.network"
+                                                 code:1001
+                                             userInfo:@{NSLocalizedDescriptionKey : @"invalid query parameter"}];
+            comlection(nil, error);
+        }
+    }
+    
     NSString *urlString = @"https://beta.maimemo.com:81/api/v3/vocabulary/query";
     NSURL *url = [NSURL URLWithString:urlString];
     NSDictionary *prameters = @{@"spelling": word};

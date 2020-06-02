@@ -132,7 +132,7 @@
     [self.actionButton setTitle:@"label" forState:UIControlStateNormal];
     self.actionButton.titleLabel.font = [UIFont systemFontOfSize:15.0];
     self.actionButton.enabled = FALSE;
-    [self.actionButton addTarget:self action:@selector(actionButtonaction:)
+    [self.actionButton addTarget:self action:@selector(actionButtonAction:)
                 forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview: self.actionButton];
     
@@ -158,7 +158,7 @@
     self.bottomLabel = [[UILabel alloc] initWithFrame: CGRectMake(GeneralX, contactUsY,
                                                                           GeneralWidth, contactUsFontSize)];
     self.bottomLabel.text = @"遇到问题？联系客服";
-    self.bottomLabel.font = [UIFont systemFontOfSize: 15];
+    self.bottomLabel.font = [UIFont systemFontOfSize:15];
     self.bottomLabel.textAlignment = NSTextAlignmentCenter;
     self.bottomLabel.textColor = [UIColor colorWithHexString:@"#8e8e8e"];
     [self.view addSubview: self.bottomLabel];
@@ -181,8 +181,7 @@
 }
 
 
-
-- (void)actionButtonaction:(id)sender {
+- (void)actionButtonAction:(id)sender {
     [self.view endEditing:YES];
 }
 

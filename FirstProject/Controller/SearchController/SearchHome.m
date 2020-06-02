@@ -102,10 +102,11 @@
         self.filterDataList = nil;
     }
 //    // 以输入的字符为首，后面匹配任意个字符串
-//    NSPredicate *scopePredocate = [NSPredicate predicateWithFormat:@"SELF.spelling BEGINSWITH[c] %@", searchText];
-//    NSArray *tempArray = [self.dataList filteredArrayUsingPredicate:scopePredocate];
-    ViewModel *viewModel = [[ViewModel alloc] initWithApiData];
-    self.filterDataList = [[viewModel getApiQueryDataWithString:searchText] mutableCopy];
+    NSPredicate *scopePredocate = [NSPredicate predicateWithFormat:@"SELF.spelling BEGINSWITH[c] %@", searchText];
+    NSArray *tempArray = [self.dataList filteredArrayUsingPredicate:scopePredocate];
+//    ViewModel *viewModel = [[ViewModel alloc] initWithApiData];
+//    self.filterDataList = [[viewModel getApiQueryDataWithString:searchText] mutableCopy];
+    self.filterDataList = [tempArray mutableCopy];
 }
 
 
